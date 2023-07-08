@@ -86,7 +86,12 @@ func main() {
 		fmt.Scan(&email)
 		fmt.Println("Enter your number of tickets to book:")
 		fmt.Scan(&userTickets)
-
+		// Handling errors
+		if userTickets > remainingTickets {
+			fmt.Printf("Sorry, We have only %v tickets remaining. You can't book %v tickets.\n", remainingTickets, userTickets)
+			break
+		}
+		
 		remainingTickets = remainingTickets - userTickets
 
 		// Arraya $ Slices
@@ -131,5 +136,14 @@ func main() {
 			firstNames = append(firstNames, names[0])
 		}
 		fmt.Printf("The first names of bookings are: %v\n", firstNames)
+
+		// var noTicketsremaining bool = remainingTickets == 0
+		// noTicketsremaining := remainingTickets == 0
+		// If-Else
+		if remainingTickets == 0 {
+			// end program
+			fmt.Printf("Our conference is booked out, Come back next year.")
+			break
+		}
 	}
 }
