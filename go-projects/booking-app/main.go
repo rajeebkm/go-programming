@@ -42,6 +42,11 @@ func main() {
 	// var bookings [50]string // Alternative way to declare and assign size and type of array
 	// using sliced
 	var bookings []string
+	// or,
+	// var bookings = []string{}
+	//or, 
+	// bookings := []string{}
+	
 	//Asign value
 	bookings_2[0] = "Rajeeb"
 	bookings_2[1] = "Sanjay"
@@ -49,16 +54,19 @@ func main() {
 
 	// bookings[0] = firstName + " " + lastName
 	// with slices
+	// Slice is an abstraction of an array (Dynamic size) variable length or get an sub-array of it's own
+	// Slices are index-based and have a size, but is resized when needed
 	bookings = append(bookings, firstName + " " + lastName)
-	
+
 
 	fmt.Printf("List of bookings: %v\n", bookings)
 	fmt.Printf("First bboking: %v\n", bookings[0])
 	fmt.Printf("bookings type: %T\n", bookings)
 	fmt.Printf("bookings size: %v\n", len(bookings))
 
-	// Slice is an abstraction of an array (Dynamic size) variable length or get an sub-array of it's own
-	// Slices are index-based and have a size, but is resized when needed
+	fmt.Printf("These are oll our bookings: %v\n", bookings)
+
+	
 
 
 }
