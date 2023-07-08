@@ -89,9 +89,10 @@ func main() {
 		// Handling errors
 		if userTickets > remainingTickets {
 			fmt.Printf("Sorry, We have only %v tickets remaining. You can't book %v tickets.\n", remainingTickets, userTickets)
-			break
+			// break
+			continue
 		}
-		
+
 		remainingTickets = remainingTickets - userTickets
 
 		// Arraya $ Slices
