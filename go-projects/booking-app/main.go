@@ -146,6 +146,7 @@ func main() {
 			// break
 			// continue
 		}
-	
+		// can be added else if, if we need.
+		// can add conditoons to for loop as well like (for remainingTickets > 0 && len(bookings) < 50 {})
 	}
 }
