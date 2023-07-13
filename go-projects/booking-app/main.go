@@ -89,7 +89,8 @@ func main() {
 		// Handling errors
 		isValidName := len(firstName) >=2 && len(lastName) >= 2
 		isValidEmail := strings.Contains(email, "@")
-		isValidTickets := userTickets <= remainingTickets
+		isValidTickets := userTickets >0 && userTickets <= remainingTickets
+		
 		if isValidName && isValidEmail && isValidTickets {
 			remainingTickets = remainingTickets - userTickets
 			// Arraya $ Slices
@@ -145,7 +146,15 @@ func main() {
 			}
 		
 		} else {
-			fmt.Printf("Sorry, We have only %v tickets remaining. You can't book %v tickets.\n", remainingTickets, userTickets)
+			if !isValidName {
+				fmt.Println("FirstName or LastName you entered is too short.")
+			}
+			if !isValidEmail {
+				fmt.Println("Email address you entered doesn't contain an @ sign.")
+			}
+			if !isValidTickets {
+				fmt.Println("Number of tickets you entered is invalid.")
+			}
 			// break
 			// continue
 		}
