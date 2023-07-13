@@ -87,7 +87,10 @@ func main() {
 		fmt.Println("Enter your number of tickets to book:")
 		fmt.Scan(&userTickets)
 		// Handling errors
-		if userTickets <= remainingTickets {
+		isValidName := len(firstName) >=2 && len(lastName) >= 2
+		isValidEmail := strings.Contains(email, "@")
+		isValidTickets := userTickets <= remainingTickets
+		if isValidName && isValidEmail && isValidTickets {
 			remainingTickets = remainingTickets - userTickets
 			// Arraya $ Slices
 			// var bookings_1 = []string{} // empty array
